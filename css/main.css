@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    position: relative;
+    padding-bottom: 58px;
+    min-height: 100vh;
+}
+main {
+    width: 100vw;
+    margin: 0 auto;
+}
+footer {
+    text-align: center;
+    background-color: #dae1e7;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 30px;
+}
+#background-image {
+    background: url("../images/background.jpeg") no-repeat center center;
+    background-size: cover;
+    height: 400px;
+}
+
+#background-image form {
+    width: 50%;
+    margin: 0 auto;
+    max-width: 400px;
+}
+#background-image .form-check-label {
+    color: white;
+}
+#background-image #search-btn {
+    background-color: #1f4068;
+    color: white;
+    margin-top: 10px;
+}
+/* Collapse Section */
+#collapseFilter .card {
+    background-color: transparent;
+    padding: 0px 5px 0px 5px;
+}
+/* Error Message */
+#response-error {
+    color: rgb(227, 64, 64);
+    visibility: hidden;
+}
+/* Search Detail Movie Result */
+.movie-subtitle {
+    font-weight: 700;
+}
+.subtitle-content{    
+    font-weight: normal;
+    font-family: 'Roboto Slab', serif;
+}
+.movie-score {
+    margin: 0 0 0 5px;
+}
+hr {
+border:solid .1px black;
+}
+hr:last-child {
+    display: none;
+}
+.rating-image {
+    margin: 0 auto;
+}
+/* Modal Popup */
+.modal-body img{
+    width: 50%;
+}
+.modal-body {
+    text-align: left;
+}
+.movie-detail {
+    margin-left: 10px;
+}
+.movie-detail span {
+    font-weight: normal;
+    color: black;
+}
+/* Loader */
+.loading-spinner {
+    display: none;
+}
+/* Results Header*/
+#search-content {
+    visibility: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+#sort-dropdown-form {
+    width: 200px;
+}
+#sort-dropdown-form .form-group {
+    margin: 0;
+}
+#crediting {
+    font-size: 12px;
+    margin-top: 2px;
+}
+
+
+/* Drop down */
+.dropdown-menu {
+    width: 100% !important;
+    display: none;
+}
+
+.dropdown-img {
+    width: 50px;
+}
+
+/* moving rating */
+.mobile-view {
+    margin-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+    .mobile-view {
+        margin-bottom: 0px;
+    }
+}
+
+.pagination {
+    visibility: hidden;
+}
+

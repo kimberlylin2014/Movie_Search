@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Movie Search</title>
+  </head>
+  <body>
+    <!-- <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="/images/2919587.svg" width="30" height="30" alt="">
+        </a>
+      </nav>      
+    </header> -->
+    <main>
+      <!-- Background Image -->
+      <div id="background-image" class="d-flex align-items-center">
+        <form>
+          <div id="response-error"></div>
+          <div class="dropdown">
+            <input class="search-input form-control dropdown-toggle" type="search" placeholder="type any movie keyword..." aria-label="Search" data-toggle="dropdown" id="dropdownMenuButton">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <p class="pl-2 m-0 dropdown-input"></p>
+              <div id="dropdown-section" class="d-flex flex-column">
+                <p class="error"></p>
+                <a href="#" class="d-flex flex-row align-items-center"> 
+                  <img class="top3-img" width="80px" style="margin-left: 10px;  margin-bottom: 10px;"alt="top-3">
+                  <span style="font-size: 15px; margin-left: 10px;" class="top3-title"></span>
+                  <span style="font-size: 15px" class="top3-year"></span>
+                </a>
+                <a href="#" class="d-flex flex-row align-items-center"> 
+                  <img class="top3-img"  width="80px" style="margin-left: 10px; margin-bottom: 10px;"alt="top-3">
+                  <span style="font-size: 15px; margin-left: 10px;" class="top3-title"></span>
+                  <span style="font-size: 15px" class="top3-year"></span>
+                </a>
+                <a href="#" class="d-flex flex-row align-items-center"> 
+                  <img class="top3-img"  width="80px" style="margin-left: 10px; margin-bottom: 10px;"alt="top-3">
+                  <span style="font-size: 15px; margin-left: 10px;" class="top3-title"></span>
+                  <span style="font-size: 15px" class="top3-year"></span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <p>
+            <button class="btn btn-light btn-sm mt-2" type="button" id="filter-option-btn" data-toggle="collapse" data-target="#collapseFilter" aria-expanded="false" aria-controls="collapseFilter">
+            More Options
+            </button>
+          </p>
+          <div class="collapse" id="collapseFilter">
+            <div class="card card-body">
+              <!-- collapsed content -->
+              <fieldset class="form-group">
+                <div class="row">
+                  <div class="col-sm-10 form-row">
+                    <div class="form-check mr-5">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="year-radio" value="option2">
+                      <label class="form-check-label" for="year-radio">
+                        Filter By Year
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="form-group">
+                <input class="form-control form-control-sm" type="text" placeholder="Enter a year..." id="year-input">
+              </fieldset>
+              <!-- collapased content end -->
+            </div>
+          </div>
+          <button class="btn btn-light btn-md m-0" id="search-btn" type="submit">
+            <span id="search-btn-text">Search </span>
+            <div class="loading-spinner">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>  
+              Loading...
+            </div>
+          </button>
+        </form>
+      </div>
+      
+      <!-- Populate Movie Section -->
+      <div class="container">
+        <div id="search-content">
+          <h4 >Search Results for: "<span id="result-text"></span>"</h4>
+          <form id="sort-dropdown-form">
+              <div class="form-group">
+                  <select class="form-control" id="select-sort">
+                    <option value="">Sort By Featured</option>
+                    <option value="lowToHigh">Rating [Low to High]</option>
+                    <option value="highToLow">Rating [High to Low]</option>
+                  </select>
+              </div>
+          </form>
+        </div>
+      </div>
+      <div class="container mb-5">
+        <div id="search-results"> </div>  
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 id="modal-title" class="movie-detail"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal-close-btn">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body d-flex">
+              <img id="modal-img" src="" alt="image">
+              <div>
+                <p class="movie-detail"><span id="rated"></span></p>
+                <p class="movie-detail"><span  id="genre"></span> </p>
+                <p class="movie-detail"><span id="movie-actors"></span></p>
+                <p class="movie-detail"><span id="awards"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- pagination section -->
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+        </ul>
+      </nav>
+    </main>
+    <footer>
+      <p id="crediting" class="text-center">Icons made by <a href="https://www.flaticon.com/authors/freepik">Freepik</a>  from <a href="https://www.flaticon.com/">www.flaticon.com</a> </p> 
+    </footer>
+
+    <!-- end of pagination -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Modules -->
+    <script src="./config.js"></script>
+    <script type="module" src="js/main.js"></script>
+ </body>
+</html>
