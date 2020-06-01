@@ -25,6 +25,9 @@ This project is mainly for learning purposes with the emphasis on the following 
 * Async Await
 * Promises
 
+### Video Demo of App
+* https://youtu.be/qjcAq9tWdUI
+
 ### Resources: 
 1. Online Course: The Web Developer Bootcamp by Colt Steele (https://www.udemy.com/course/the-web-developer-bootcamp/)
 2. API from OMDb API (http://omdbapi.com/)
